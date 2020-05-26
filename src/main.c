@@ -1,10 +1,10 @@
 #include "mgos.h"
-#include "DallasTemperature.h"
+#include "mgos_arduino_dallas_temp.h"
 #include "mgos_arduino_onewire.h"
 
 #define ONE_WIRE_BUS 2
-struct OneWire *ow;
-struct DallasTemperature *dt;
+OneWire *ow;
+DallasTemperature *dt;
 int deviceCount = 0;
 float tempC;
 
