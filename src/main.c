@@ -8,6 +8,23 @@ DallasTemperature *dt;
 int deviceCount = 0;
 float tempC;
 
+
+
+/*! \mainpage MCP2515 testing
+ *
+ * \section Documentation
+ *
+ * This is the introduction. Add some content....
+ *
+ * \section install_sec Installation
+ *
+ * \subsection step1 Step 1: Opening the box
+ *
+ * etc...
+ */
+
+
+
 void get_temp_reading_cb()
 {
   mgos_arduino_dt_request_temperatures(dt);
@@ -18,10 +35,12 @@ void get_temp_reading_cb()
     LOG(LL_INFO, ("TCU: Temparture of  found : %.2f from %i device", tempC, i));
   }
 }
+/**< Get temperature reading from all sensors. */
+
 
 enum mgos_app_init_result mgos_app_init(void)
 {
-  ow = mgos_arduino_onewire_create(ONE_WIRE_BUS);
+  ow = mgos_arduino_onewire_create(ONE_WIRE_BUS); // constructor object for one wire
   dt = mgos_arduino_dt_create(ow);
   mgos_arduino_dt_begin(dt);
   deviceCount = mgos_arduino_dt_get_device_count(dt);
@@ -33,3 +52,4 @@ enum mgos_app_init_result mgos_app_init(void)
       NULL);
   return MGOS_APP_INIT_SUCCESS;
 }
+/**< Intializing function for mongoose os */
