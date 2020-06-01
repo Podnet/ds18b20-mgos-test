@@ -10,17 +10,12 @@ float tempC;
 
 
 
-/*! \mainpage MCP2515 testing
+/*! \mainpage DS18B20 
  *
  * \section Documentation
  *
- * This is the introduction. Add some content....
+ * This is a test app of multiple DS18B20 to measure temperature, written for mongooose OS.
  *
- * \section install_sec Installation
- *
- * \subsection step1 Step 1: Opening the box
- *
- * etc...
  */
 
 
